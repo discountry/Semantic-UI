@@ -1,3 +1,4 @@
+docs/
 node_modules
 node/server.json
 test/coverage/
