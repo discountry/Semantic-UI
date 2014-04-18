@@ -31,7 +31,45 @@
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
 
   
-  <link rel="stylesheet" type="text/css" class="ui" href="build/packaged/css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/basic.icon.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/icon.css">
+
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/button.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/divider.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/header.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/image.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/input.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/label.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/loader.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/reveal.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/progress.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/segment.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/elements/step.css">
+
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/collections/breadcrumb.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/collections/form.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/collections/grid.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/collections/menu.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/collections/message.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/collections/table.css">
+
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/views/comment.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/views/list.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/views/feed.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/views/item.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/views/statistic.css">
+
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/modal.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/accordion.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/dropdown.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/popup.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/rating.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/sidebar.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/shape.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/tab.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/checkbox.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/dimmer.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="build/uncompressed/modules/transition.css">
   
 
   <link rel="stylesheet" type="text/css" href="stylesheets/semantic.css">
@@ -43,8 +81,8 @@
       eventSupport = ('querySelector' in document && 'addEventListener' in window)
       jsonSupport  = (typeof JSON !== 'undefined'),
       jQuery       = (eventSupport && jsonSupport)
-        ? '/javascript/library/jquery.min.js'
-        : '/javascript/library/jquery.legacy.min.js'
+        ? '/javascript/library/jquery.js'
+        : '/javascript/library/jquery.legacy.js'
     ;
     document.write('<script src="' + jQuery + '"><\/script>');
   }());
@@ -57,7 +95,19 @@
   <script src="javascript/library/waypoints.js"></script>
 
   
-  <script src="build/packaged/javascript/semantic.min.js"></script>
+  <script src="build/uncompressed/modules/behavior/api.js"></script>
+  <script src="build/uncompressed/modules/behavior/state.js"></script>
+  <script src="build/uncompressed/modules/accordion.js"></script>
+  <script src="build/uncompressed/modules/checkbox.js"></script>
+  <script src="build/uncompressed/modules/dimmer.js"></script>
+  <script src="build/uncompressed/modules/dropdown.js"></script>
+  <script src="build/uncompressed/modules/modal.js"></script>
+  <script src="build/uncompressed/modules/popup.js"></script>
+  <script src="build/uncompressed/modules/rating.js"></script>
+  <script src="build/uncompressed/modules/shape.js"></script>
+  <script src="build/uncompressed/modules/sidebar.js"></script>
+  <script src="build/uncompressed/modules/tab.js"></script>
+  <script src="build/uncompressed/modules/transition.js"></script>
   
 
   <script src="javascript/semantic.js"></script>
@@ -77,7 +127,7 @@
     <a class="hide item">
       <i class="close icon"></i> 关闭菜单
     </a>
-    <a class="item" href="/build/semantic.zip">
+    <a class="item" href="build/semantic.zip">
       <i class="inverted circular red awesome download cloud icon"></i> <b>下载</b>
     </a>
     <div class="item">
@@ -341,12 +391,7 @@
       </a>
       
     </div>
-    <div class="advertisement">
-      
-      <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/51619/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
-      
-    </div>
-    
+   
     
     
     
