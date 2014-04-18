@@ -205,14 +205,14 @@
       </div>
     </div>
     <div class="item">
-      <b>样式说明</b>
+      <b>开发经验</b>
       <div class="menu">
         
           <a class="item" href="/guide/cssguide.html">CSS</a>
         
           <a class="item" href="/guide/javascriptguide.html">Javascript</a>
         
-          <a class="item" href="/guide/styleguide.html">Language</a>
+          <a class="item" href="/guide/styleguide.html">命名规范</a>
         
       </div>
     </div>
@@ -320,15 +320,15 @@ $(document)
 <div class="main container">
   <div class="peek">
     <div class="ui vertical pointing secondary menu">
-      <a class="active item">Interfacing</a>
+      <a class="active item">类名</a>
       <a class="item">APIs</a>
     </div>
   </div>
-  <h2 class="ui dividing header">Interfacing Carefully</h2>
+  <h2 class="ui dividing header">声明属性</h2>
 
-  <p>UI definitions in Semantic are given the class name <code>ui</code>. This is to help tell the difference between ui elements and parts of the definition of an element. This means any element with the class name UI has a corresponding UI definition.
+  <p>语义UI使用类名<code>ui</code>来声明页面元素样式。这样有助于区别页面元素的样式class属性和其他类型的class属性。
 
-  <p>For example a menu may have menu items inside of it. These items are contained as part of the menu definition but do not receive the class name <code>ui</code> because they are part of a UI menu collection.</p>
+  <p>例如在使用菜单分类UI时，在菜单的页面容器中声明了<code>ui</code>class属性，而在item中没有声明，因为item包含在菜单分类中。</p>
 
   <div class="code" data-type="html" data-title="A Simple Menu" data-preview="true">
     <div class="ui menu">
@@ -337,9 +337,9 @@ $(document)
     </div>
   </div>
 
-  <h3 class="ui header">Changing an Element</h3>
+  <h3 class="ui header">改变样式</h3>
 
-  <p>Class names in Semantic always use single english words. If a class name is an adjective it is either a <a href="/introduction/types.html">type</a> of element or <a href="/introduction/variations.html">variation</a> of an element. <b>CSS definitions always define adjectives in the context of a noun</b>. In this way class names cannot pollute the namespace.</p>
+  <p>语义UI使用单个英文单词作为样式的类名。所有的形容词类名都包含在页面元素的<a href="/introduction/types.html">类型</a>或者<a href="/introduction/variations.html">可变属性</a>中。<b>CSS样式定义均为形容词</b>。这样不会破坏语义UI的命名空间。</p>
 
   <div class="code" data-type="html" data-title="A Compact Menu Variation" data-preview="true">
     <div class="ui compact menu">
@@ -349,10 +349,9 @@ $(document)
   </div>
   <div class="ui divider"></div>
 
-  <h3 class="ui header">Combining elements</h3>
-  <p>All UI definitions in semantic are stand-alone, and do not require other components to function. However, components can choose to have optional couplings with other components.</p>
-
-  <p>For example you might want to include a badge inside a menu. A label inside of a menu will automatically function as a badge.</p>
+  <h3 class="ui header">组合元素</h3>
+  <p>语义UI的所有元素都可以单独或与其他元素组合使用。</p>
+  <p>例如在菜单中使用标签。</p>
 
   <div class="code" data-type="html" data-title="Using a UI Label inside a UI Menu" data-preview="true">
     <div class="ui compact menu">
@@ -364,9 +363,9 @@ $(document)
     </div>
   </div>
 
-  <h2 class="ui dividing header">Semantic APIs</h2>
+  <h2 class="ui dividing header">语义 APIs</h2>
 
-  <p>Modules define a public API using verbs and simple phrases. When methods are invoked internally those phrases are matched to internal methods automatically.</p>
+  <p>组件的API使用一些动词或短语。</p>
 
     <div class="code" data-type="html" data-label="true" data-preview="true">
     <div class="ui pointing secondary demo menu">
@@ -378,16 +377,16 @@ $(document)
     <div class="ui tab segment" data-tab="second">Second</div>
     <div class="ui tab segment" data-tab="third">Third</div>
     </div>
-        <h3 class="ui header">Opening a new tab with a behavior</h3>
-        <p>Modules have simple behaviors for triggering common actions</p>
+        <h3 class="ui header">通过javascript切换标签。</h3>
+        <p>组件具有一些通用的动作。</p>
         <div class="code" data-demo="true">
     $('.demo.menu .item')
       .tab('change tab', 'second')
     ;
         </div>
 
-        <h3 class="ui header">Opening a new tab with multiple behaviors</h3>
-        <p>Any internal behavior is accessible as well</p>
+        <h3 class="ui header">动作可以组合使用。</h3>
+        <p>对于所有的内部动作都适用。</p>
         <div class="code" data-demo="true">
     $('.demo.menu .item')
       .tab('deactivate all')
@@ -395,8 +394,8 @@ $(document)
       .tab('activate navigation', 'third')
     ;
         </div>
-      <h3 class="ui header">Turning on HTML5 State</h3>
-      <p>Modules can be re-initialized at any time with different settings</p>
+      <h3 class="ui header">HTML5 声明</h3>
+      <p>组件可以在任何时候重新初始化。</p>
         <div class="code" data-demo="true">
     $('.demo.menu .item')
       .tab({
@@ -409,7 +408,7 @@ $(document)
   <div class="ui divider"></div>
 
   <a class="ui large right labeled teal icon button" href="/introduction/types.html">
-    Next: UI Types
+    查看: UI 类型
     <i class="right arrow icon"></i>
   </a>
 

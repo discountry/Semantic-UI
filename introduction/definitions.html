@@ -205,14 +205,14 @@
       </div>
     </div>
     <div class="item">
-      <b>样式说明</b>
+      <b>开发经验</b>
       <div class="menu">
         
           <a class="item" href="/guide/cssguide.html">CSS</a>
         
           <a class="item" href="/guide/javascriptguide.html">Javascript</a>
         
-          <a class="item" href="/guide/styleguide.html">Language</a>
+          <a class="item" href="/guide/styleguide.html">命名规范</a>
         
       </div>
     </div>
@@ -311,145 +311,145 @@
 <div class="main container">
   <div class="peek">
     <div class="ui vertical pointing secondary menu">
-      <a class="active item">Definitions</a>
-      <a class="item">Types</a>
+      <a class="active item">定义</a>
+      <a class="item">类型</a>
     </div>
   </div>
 
-  <h2 class="ui dividing header">Defining Definitions</h2>
+  <h2 class="ui dividing header">定义的设定</h2>
 
-  <p>Definitions in semantic are groups of css, fonts, images, and javascript which make up a single element. Unlike other javascript libraries, semantic UI elements are stand-alone and only require their own assets to function correctly.</p>
+  <p>语义UI元素的定义由css,fonts,images,javascript组成。并不像其他一些javascript库，语义UI组件的javascript是松耦合的。</p>
 
-  <h3 class="ui header">Definition Types</h3>
-  <p>Semantic has five different ui definitions. These are useful patterns for describing re-usable parts of a website.</p>
+  <h3 class="ui header">定义类型</h3>
+  <p>语义UI具有五类UI定义。每个部分在页面中都是可以复用的。</p>
   <table class="ui celled table segment">
     <tr>
-      <td class="four wide"><b>UI Element</b></td>
-      <td>A basic building block of a website, exists alone or in homogenous groups</td>
+      <td class="four wide"><b>UI 元素</b></td>
+      <td>构建一个网站的最基本的页面元素。</td>
     </tr>
     <tr>
-      <td><b>UI Collection</b></td>
-      <td>A heterogeneous group of several elements which can usually be found together.</td>
+      <td><b>UI 分类</b></td>
+      <td>由最基本元素组合而成的一些页面部件。</td>
     </tr>
     <tr>
-      <td><b>UI View</b></td>
-      <td>A way to present common website content like comments, activity feeds</td>
+      <td><b>UI 模块</b></td>
+      <td>可以作为页面的一部分内容的模块，像评论模块、列表模块等。</td>
     </tr>
     <tr>
-      <td><b>UI Module</b></td>
-      <td>An element where its behavior is an essential part of its definition</td>
+      <td><b>UI 组件</b></td>
+      <td>与javascript协同使用，具有独立功能的页面组件。</td>
     </tr>
     <tr>
-      <td><b>UI Behavior</b></td>
-      <td>A set of free-standing actions not specifically tied to an element</td>
+      <td><b>UI 动作</b></td>
+      <td>可以与页面元素绑定的一些动作事件，例如表单验证。</td>
     </tr>
   </table>
 
-  <h3 class="ui dividing header">Definition Sections</h2>
-  <p>All UI components of a single type are defined similarly.</p>
+  <h3 class="ui dividing header">定义分组</h2>
+  <p>所有UI元素的定义如下表所示：</p>
   <table class="ui celled sortable definition table segment">
     <tr>
-      <td class="three wide">All UI</td>
+      <td class="three wide">通用</td>
       <td>
         <div class="ui divided relaxed list">
           <div class="item">
-            <div class="header">Types</div>
-            <div class="description">Defines mutually exclusive types which each may have their own html</div>
+            <div class="header">类型</div>
+            <div class="description">定义每类UI元素独有的样式类型。</div>
           </div>
           <div class="item">
-            <div class="header">States</div>
-            <div class="description">Defines element states like disabled, hovered, pressed down</div>
+            <div class="header">状态</div>
+            <div class="description">例如页面元素在disabled, hovered, pressed down时的样式。</div>
           </div>
           <div class="item">
-            <div class="header">Variations</div>
-            <div class="description">Defines changes to an element which are not mutually exclusive and can be used together</div>
+            <div class="header">可变属性</div>
+            <div class="description">一些可以单独为页面元素设置的属性，例如大小或颜色等。</div>
           </div>
         </div>
       </td>
     </tr>
     <tr>
-      <td>Elements</td>
+      <td>元素</td>
       <td>
         <div class="ui divided relaxed list">
           <div class="item">
-            <div class="header">Group</div>
-            <div class="description">An element can optionally define how attributes can be shared across a group</div>
+            <div class="header">分组</div>
+            <div class="description">元素可以使用分组来统一设置相同的样式。</div>
           </div>
           <div class="item">
             <div class="header">
-              <a href="/elements/button.html"><i class="book icon"></i>UI Button</a>
+              <a href="/elements/button.html"><i class="book icon"></i>按钮</a>
             </div>
           </div>
         </div>
       </td>
     </tr>
     <tr>
-      <td>Collections</td>
+      <td>分类</td>
       <td>
         <div class="ui divided relaxed list">
           <div class="item">
-            <div class="header">Content</div>
-            <div class="description">A collection can define elements which might be found inside</div>
+            <div class="header">内容</div>
+            <div class="description">分类UI所包含的页面元素类型。</div>
           </div>
           <div class="item">
-            <div class="header">States</div>
-            <div class="description">A collection may define states for content elements or itself</div>
+            <div class="header">状态</div>
+            <div class="description">分类UI或其包含页面元素所处的状态。</div>
           </div>
           <div class="item">
-            <div class="header">Variations</div>
-            <div class="description">A collection may define variations for content elements or itself</div>
+            <div class="header">可变属性</div>
+            <div class="description">分类UI或其包含页面元素可以单独设置的样式属性。</div>
           </div>
           <div class="item">
             <div class="header">
-              <a href="/collections/form.html"><i class="book icon"></i>UI Form</a>
+              <a href="/collections/form.html"><i class="book icon"></i>表单</a>
             </div>
           </div>
         </div>
       </td>
     </tr>
     <tr>
-      <td>Views</td>
+      <td>模块</td>
       <td>
         <div class="ui divided relaxed list">
           <div class="item">
-            <div class="header">Content</div>
-            <div class="description">A view may define elements which can exist inside of the view</div>
+            <div class="header">内容</div>
+            <div class="description">模块UI所包含的页面元素类型。</div>
           </div>
           <div class="item">
-            <div class="header">States</div>
-            <div class="description">A view may define states for content elements or itself</div>
+            <div class="header">状态</div>
+            <div class="description">模块UI或其包含页面元素所处的状态。</div>
           </div>
           <div class="item">
-            <div class="header">Variations</div>
-            <div class="description">A view may define variations for a content elements or itself</div>
+            <div class="header">可变属性</div>
+            <div class="description">模块UI或其包含页面元素可以单独设置的样式属性。</div>
           </div>
           <div class="item">
             <div class="header">
-              <a href="/views/item.html"><i class="book icon"></i>UI Item</a>
+              <a href="/views/item.html"><i class="book icon"></i>条目</a>
             </div>
           </div>
         </div>
       </td>
     </tr>
     <tr>
-      <td>Modules & Behaviors</td>
+      <td>组件 & 动作</td>
       <td>
         <div class="ui divided relaxed list">
           <div class="item">
-            <div class="header">Behavior</div>
-            <div class="description">A module will define a set of <a href="/module.html#/behavior">behaviors</a> which can be used as an API</div>
+            <div class="header">动作</div>
+            <div class="description">组件所有的<a href="/module.html#/behavior">动作</a>都可以通过javascript调用。</div>
           </div>
           <div class="item">
-            <div class="header">Settings</div>
-            <div class="description">A <a href="/module.html#/settings">settings object</a> which can alter the default behavior when instantiating a module</div>
+            <div class="header">设置</div>
+            <div class="description">所有组件可以<a href="/module.html#/settings">设置</a>的参数。</div>
           </div>
           <div class="item">
-            <div class="header">Examples</div>
-            <div class="description">A list of examples to showcase the variations in behavior of a module</div>
+            <div class="header">示例</div>
+            <div class="description">组件使用的示例。</div>
           </div>
           <div class="item">
             <div class="header">
-              <a href="/modules/dropdown.html"><i class="book icon"></i>UI Dropdown</a>
+              <a href="/modules/dropdown.html"><i class="book icon"></i>下拉框</a>
             </div>
           </div>
         </div>
@@ -457,13 +457,13 @@
     </tr>
     </tr>
   </table>
-  <h2 class="ui dividing header">Types of Definitions</h2>
+  <h2 class="ui dividing header">定义的类型</h2>
 
-  <h3 class="ui dividing header">UI Elements</h3>
+  <h3 class="ui dividing header">UI 元素</h3>
 
-  <p>UI Elements are page elements which are indivisible. This can be thought of as similar in definition as an "element" in chemistry.</p>
+  <p>就像化学中“元素”的定义一样，UI元素表示可以独立划分为一类的页面元素。</p>
 
-  <p>UI elements can have plural definitions when they are known to exist together in groups. Plural variations allow you to only specify qualities once, allowing them to be inferred across all members of a group.</p>
+  <p>UI元素可以分组使用，在分组中可以统一为多个元素设置相同的样式属性。</p>
 
   <div class="code" data-type="html" data-label="true">
     <div class="large ui buttons">
@@ -472,22 +472,22 @@
     </div>
   </div>
 
-  <h3 class="ui header">Examples of UI elements:</h3>
+  <h3 class="ui header">示例:</h3>
   <table class="ui celled table">
     <tr>
-      <td class="two wide"><b>Button</b></td>
+      <td class="two wide"><b>按钮</b></td>
       <td>
         <div class="ui labeled teal icon button"><i class="globe icon"></i>Button</div>
       </td>
     </tr>
     <tr>
-      <td><b>Label</b></td>
+      <td><b>标签</b></td>
       <td>
         <div class="ui label">label</div>
       </td>
     </tr>
     <tr>
-      <td><b>Input</b></td>
+      <td><b>输入框</b></td>
       <td>
         <div class="ui icon input">
           <input value="input">
@@ -496,58 +496,58 @@
       </td>
     </tr>
     <tr>
-      <td><b>Loader</b></td>
+      <td><b>载入</b></td>
       <td>
         <div class="ui active inline loader"></div>
       </td>
     </tr>
     <tr>
-      <td><b>Segment</b></td>
+      <td><b>段落</b></td>
       <td>
         <div class="ui stacked segment">Segment</div>
       </td>
     </tr>
   </table>
 
-  <h3 class="ui dividing header">UI Collections</h3>
+  <h3 class="ui dividing header">UI 分类</h3>
 
-  <p>UI Collections are groups of heterogeneous page elements which are usually found together. Carrying the chemistry metaphor, these can be thought of as molecules.</p>
+  <p>就好比化学中的H2O,CO2一样，类似于分子的定义。UI分类便是一些经常协同使用的页面元素组合。</p>
 
-  <p>UI collections have a definition of elements that exist, or could exist inside of them. They do not usually require all elements to be found, but they describe a list of the "usual suspects". Unlike elements definitions, collections are not typically useful to define in plural.</p>
+  <p>UI 分类定义了其所包含的页面元素。在页面中经常以组合的形式出现。</p>
 
-  <h3 class="ui header">Examples of UI collections:</h3>
+  <h3 class="ui header">示例:</h3>
   <ul class="ui list">
-    <li>Forms</li>
-    <li>Tables</li>
-    <li>Grids (Layout)</li>
-    <li>Menus</li>
+    <li>表单</li>
+    <li>列表</li>
+    <li>栅格</li>
+    <li>菜单</li>
   </ul>
 
-  <h3 class="ui dividing header">UI Modules</h3>
+  <h3 class="ui dividing header">UI 组件</h3>
 
-  <p>UI modules are elements whose behavior is a fundamental part of its definition. UI Modules are usually dependent on javascript which carries the implementation of it's behavior, although in some special circumstances the behavior can include css alone.</p>
+  <p>UI 组件是一类与javascript协同使用，并具有特定功能的页面组件。</p>
 
-  <p>Examples of UI modules:</p>
+  <p>示例:</p>
   <ul class="ui list">
-    <li>Popups</li>
-    <li>Modals</li>
-    <li>Chat Rooms</li>
+    <li>提示框</li>
+    <li>对话框</li>
+    <li>评分</li>
   </ul>
 
-  <h3 class="ui dividing header">UI Views</h3>
+  <h3 class="ui dividing header">UI 模块</h3>
 
-  <p>UI Views are common tropes for presenting specific types of information. Unlike collections which focus specifically on the relation of interface elements, views focus specifically on the relation of site content to other pieces of site content.</p>
+  <p>UI 模块表示可以作为页面的一部分的页面元素组合。</p>
 
-  <h3 class="ui header">Examples of UI views:</h3>
+  <h3 class="ui header">示例:</h3>
   <ul class="ui list">
-    <li>Comment Feed</li>
-    <li>Activity Feed</li>
-    <li>Product List</li>
+    <li>评论</li>
+    <li>Feed</li>
+    <li>列表</li>
   </ul>
 
   <div class="ui section divider"></div>
   <a class="ui large right labeled teal icon button" href="/introduction/overview.html">
-    Next: Semantic Coding
+    查看: 概览
     <i class="right arrow icon"></i>
   </a>
 

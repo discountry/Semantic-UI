@@ -25,7 +25,7 @@
   <meta name="generator" content="DocPad v6.64.0" />
   <title>CSS | 语义 UI</title>
 
-  <meta name="description" content="Suggestions for CSS development practices" />
+  <meta name="description" content="一些CSS小技巧。" />
   <meta name="keywords" content="语义ui, html5, ui, library, framework, javascript" />
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
@@ -205,14 +205,14 @@
       </div>
     </div>
     <div class="item">
-      <b>样式说明</b>
+      <b>开发经验</b>
       <div class="menu">
         
           <a class="active item" href="/guide/cssguide.html">CSS</a>
         
           <a class="item" href="/guide/javascriptguide.html">Javascript</a>
         
-          <a class="item" href="/guide/styleguide.html">Language</a>
+          <a class="item" href="/guide/styleguide.html">命名规范</a>
         
       </div>
     </div>
@@ -246,7 +246,7 @@
             </div>
           
             <div class="item">
-              <a href="/guide/styleguide.html">3. Language</a>
+              <a href="/guide/styleguide.html">3. 命名规范</a>
             </div>
           
         </div>
@@ -291,7 +291,7 @@
         
       </h1>
 
-      <p>Suggestions for CSS development practices</p>
+      <p>一些CSS小技巧。</p>
       
       
     </div>
@@ -302,18 +302,18 @@
 
   <div class="peek">
     <div class="ui vertical pointing secondary menu">
-      <a class="active item">Techniques</a>
-      <a class="item">Style Guide</a>
-      <a class="item">Units</a>
+      <a class="active item">技巧</a>
+      <a class="item">样式指南</a>
+      <a class="item">单元</a>
     </div>
   </div>
 
 
 
-  <h2 class="ui dividing header">Techniques</h2>
+  <h2 class="ui dividing header">技巧</h2>
 
-    <h3 class="ui header">Conditional Content Formatting</h3>
-    <p>Sometimes content should be formatted differently depending on whether other content exists alongside it. A useful way to do that is use the next adjacent sibling selector '+'. The content that should have the conditional formatting should always appear second because there is no previous sibling selector in css.</p>
+    <h3 class="ui header">善用选择器</h3>
+    <p>有时候一个组件的样式取决于其包含的页面元素。一种很有效的方法是在选择器中使用'+'。为不同的情况设置不同的样式属性。</p>
 
     <div class="code" data-type="css">
     .ui.widget .image {
@@ -323,36 +323,36 @@
     .ui.widget .content {
       color: #000000;
     }
-    /* content is only floated if image exists */
+    /* 只有图片存在时使用 */
     .ui.widget .image + .content {
       margin-left: 3em;
     }
     </div>
 
-    <h3 class="ui header">Box Shadow Inheritance</h3>
-    <p>Unfortunately box shadow must be defined as a single rule, without the ability, like border, to be broken up into separate parts for positioning, color and distance. There is however one trick to allowing for a single box shadow definition to appear as multiple colors. Box shadow inherits its color from the color attribute if no color is specified.</p>
+    <h3 class="ui header">继承 Box Shadow 属性</h3>
+    <p>box shadow属性只能在但个参数中设置，并不像border,可以分别设置positioning, color或distance。这里提供了一种为box shadow设置颜色的技巧。</p>
     <div class="code" data-type="css">
     .ui.widget {
       -webkit-box-shadow: 0em 0.2em 0em inset;
       -moz-box-shadow: 0em 0.2em 0em inset;
       box-shadow: 0em 0.2em 0em inset;
     }
-    /* This will also have a red box shadow */
+    /* 这样box shadow将被设置为红色 */
     .ui.red.widget {
       color: #FF0000;
     }
     </div>
 
 
-    <h3 class="ui header">Not Sure the Size? Table It</h3>
-    <p>If content needs to fill a specified size exactly, but may be made up of parts with arbitrary size, it can be useful to use display table and table-cell. This will make sure the parent width is always obeyed regardless of alterations to an element's width.</p>
-    <p>Keep in mind any table-cell element must have a parent with <code>display:table</code> to appear formatted correctly.</p>
+    <h3 class="ui header">确定不了大小? 使用 Table</h3>
+    <p>如果你需要确定页面内容的大小，但页面内容又是一些任意大小的页面元素组合，你可以设置 display table 或 table-cell属性。这样页面容器的宽度会服从容器内元素的宽度。</p>
+    <p>请牢记 table-cell 元素必须在设置了 <code>display:table</code> 的页面容器中才能正常显示。</p>
 
     <div class="code" data-type="css">
     .ui.input {
       display: table;
     }
-    /* these two elements will always fill the input exactly regardlesss of the text content of the button */
+    /* 不论button的文字宽度如何，两个页面元素都将占满其页面容器 */
     .ui.input input {
       display: table-cell;
     }
@@ -361,10 +361,10 @@
     }
     </div>
 
-    <h3 class="ui header">Fixing Whitespace with Inline Block</h3>
-    <p>In HTML usually whitespace doesn't change a page's layouts. However, when using inline block any whitespace will create unwanted space between consecutive inline-block elements. The simple and effective fix is to make sure font-size on the parent element is 0, making all whitespace 0 pixels. Then you can reset font-size on the child element to body font size or 1 relative em.</p>
+    <h3 class="ui header">使用 Inline Block 修复页面空白</h3>
+    <p>在HTML中，通常空白不改变页面的布局。不过，使用 inline block 时将产生连续的 inline-block 的元素之间不必要的空白。简单而有效的解决方法是确保父元素字体大小为0，使所有的空白变为0px。然后，你可以在子元素上重新设置字体大小为 body 字体大小或 1 relative em</p>
     <div class="code" data-type="css">
-    /* remove whitespace */
+    /* 移除空白 */
     .ui.group {
       font-size: 0em;
     }
@@ -374,19 +374,19 @@
     }
     </div>
 
-    <h3 class="ui header">CSS :not is Awesome</h3>
-    <p>Inheritance can be hell sometimes. Consider changing the opacity of an element. There is no way to "cancel out" of that opacity change on content inside.</p>
-    <p>Sometimes the only way to avoid creating inheritance problems is to specify what elements should not receive a set of rules. Consider blurring content while a dimmer is present. Blurring should only apply to elements that are not inside the dimmer, but there is no way to know what the content is beforehand.</p>
+    <h3 class="ui header">CSS :一件麻烦事儿</h3>
+    <p>继承有时候是个大麻烦。例如在改变元素透明度时。根本没有办法将子元素独立出来不改变其透明度。</p>
+    <p>有时为了避免创建继承问题的唯一方法是指定哪些元素不应该接受一组规则。 例如在使用调光器做模糊效果时，模糊效果应该只出现在调光器内， 可在事情你根本不会知道你将面对的页面元素是什么。</p>
     <div class="code" data-type="css">
-    /* blur everything but the dimmer */
+    /* 模糊调光器之外的页面元素 */
     body.dimmed :not(.dimmer){
       -webkit-filter: blur(15px) grayscale(0.7);
       -moz-filter: blur(15px) grayscale(0.7);
     }
     </div>
 
-    <h3 class="ui header">Prevent Accidental Highlighting</h3>
-    <p>Sometimes text can be accidentally highlighted when a user double clicks an element. No need to pull out javascript to solve this.</p>
+    <h3 class="ui header">防止高亮</h3>
+    <p>有时候当用户双击某一页面元素时，页面元素会意外地高亮显示。使用css便可很好地解决这一问题。</p>
     <div class="code" data-type="css">
     .ui.thingy {
       -webkit-user-select: none;
@@ -396,10 +396,10 @@
     }
     </div>
 
-    <h3 class="ui header">Multiple Highlight Colors</h3>
-    <p>It's fairly commonly known that you can set text selection colors in css for a page, but its less commonly known that you can use multiple highlight colors in a single page.</p>
+    <h3 class="ui header">多种高亮颜色</h3>
+    <p>也许你已经知道了可以通过css设置高亮颜色，但你可能还不知道可以在同一页面中设置多种高亮颜色。</p>
     <div class="code" data-type="css">
-    /* text selected turns highlighted yellow */
+    /* 黄色高亮 */
     ::-webkit-selection {
       background-color: #FFFFCC;
       color: #555555;
@@ -412,7 +412,7 @@
       background-color: #FFFFCC;
       color: #555555;
     }
-    /* headers selected turn red */
+    /* 红色高亮 */
     h1::-moz-selection,
     h2::-moz-selection,
     h3::-moz-selection {
@@ -428,8 +428,8 @@
     </div>
 
 
-    <h3 class="ui header">Shading Borders</h3>
-    <p>When you have colored content that needs a border to match its current color, try using a 1 pixel inset box shadow with an RGBA value.</p>
+    <h3 class="ui header">底纹边框</h3>
+    <p>当你有需要符合其当前颜色的边框，尝试使用一个1像素的设置RGBA值的box shadow。</p>
 
     <div class="code" data-type="css">
 
@@ -446,8 +446,8 @@
     </div>
 
 
-    <h3 class="ui header">Joining borders</h3>
-    <p>Sometimes bordered content must sit next to other bordered content. If each element uses border the borders will double. Consider using either outline or a box shadow to accomplish the same effect but without overlapping borders.</p>
+    <h3 class="ui header">融合边框</h3>
+    <p>多个具有边框的页面元素组合的时候可能会产生很难看的边框重叠。 你可以考虑使用 outline 或 box shadow 避免这样的现象发生。</p>
     <div class="code" data-type="css">
     /* this might not go so well */
     .ui.thingy {
@@ -469,9 +469,9 @@
     }
     </div>
 
-    <h3 class="ui header">Using transparency</h3>
-    <p>RGBA colors in css allow you to specify colors with a transparency channel. This is very useful.</p>
-    <p>Consider for example, defining the text states of an element. If the elements color changes, the text might appear more complementary as a shade of black with a portion of the original color. This can be done easily with rgba</p>
+    <h3 class="ui header">使用透明度</h3>
+    <p>RGBA 颜色允许你设置透明度。</p>
+    <p>例如可以设置两个不同的背景色并且叠加显示。</p>
     <div class="code" data-type="css">
     .ui.thingy {
       background-color: #FAFAFA;
@@ -482,9 +482,9 @@
     }
     </div>
 
-    <h3 class="ui header">Nothing is always Fixed</h3>
-    <p>CSS fixed allows you to have content stick to an offset position in a page regardlesss of the scroll position of the page. Fixed menus will use the page as the offset parent, in all circumstances except when css transform is used on a parent element. <b>This will change the offset context to the transformed element instead of the page</b>.
-    <p>This behavior may seem unexpected, but using this quirk can allow you to have fixed position content relative to any element in a page.</p>
+    <h3 class="ui header">Fixed属性问题</h3>
+    <p>CSS fixed 允许你将例如导航栏在滑动页面时固定到顶部。 Fixed 菜单将使用整个页面作为父元素,除了在其父元素使用 transform 属性时，<b>这是其父元素将会发生改变从而没有办法固定在顶部</b>。
+    <p>这样的情况可能是意料之外的，以下这例方法可以解决此问题。</p>
     <div class="code" data-type="css">
     .ui.content {
       transform: rotateZ(0deg);
@@ -498,9 +498,9 @@
     }
     </div>
 
-    <h3 class="ui header">Centering Content with Transform</h3>
-    <p>Using percentages in CSS will give you a ratio based on the size of the parent element. For example, setting content to be left 50% will set content to start at exactly halfway across its parent.</p>
-    <p>If you want content to positioned relative to its own size use transform. Percentages specified inside a transform are unique in that they are based on the current element size not its parent.</p>
+    <h3 class="ui header">Transform与居中显示</h3>
+    <p>你可以通过设置百分比来使页面元素动态居中显示。</p>
+    <p>如果你想让页面元素相对于它自己的大小进行变换。变换指定的百分比只针对它们基于自身元素的大小不是其父元素。</p>
     <div class="code" data-type="css">
 
     /* doesnt work */

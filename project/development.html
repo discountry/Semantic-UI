@@ -205,14 +205,14 @@
       </div>
     </div>
     <div class="item">
-      <b>样式说明</b>
+      <b>开发经验</b>
       <div class="menu">
         
           <a class="item" href="/guide/cssguide.html">CSS</a>
         
           <a class="item" href="/guide/javascriptguide.html">Javascript</a>
         
-          <a class="item" href="/guide/styleguide.html">Language</a>
+          <a class="item" href="/guide/styleguide.html">命名规范</a>
         
       </div>
     </div>
@@ -299,73 +299,70 @@
 <div class="main container">
   <div class="peek">
     <div class="ui vertical pointing secondary menu">
-      <a class="active item">Install Steps</a>
-      <a class="item">Using Grunt</a>
+      <a class="active item">步骤</a>
+      <a class="item">使用Grunt</a>
     </div>
   </div>
 
-  <h2 class="ui dividing header">Step by Step</h2>
+  <h2 class="ui dividing header">步骤</h2>
 
-  <p>It may be useful to run the development docs locally when working on a forked version of semantic, as the docs themselves help in testing out changes to ui components.</p>
+  <p>你可能需要建立一个本地的语义UI文档。</p>
 
-  <h3 class="ui header">1. Install Node</h3>
-  <p>Semantic docs are written in DocPad which requires NodeJS. </p>
+  <h3 class="ui header">1. 安装 Node</h3>
+  <p>语义UI的文档是使用Docpad开发的，Docpad需要Node的支持。 </p>
 
-  <div class="ui warning message">Make sure npm does not require sudo to operate, this might cause permissions issues.</div>
+  <div class="ui warning message">如果在安装时遇到权限问题请使用sudo命令。</div>
 
-  <p>There are many tutorials online on how to install node in your environment, here are a few we think are helpful:</p>
+  <p>安装Node有许多方法：</p>
 
   <ul class="ui list">
     <li><a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">Node JS via Package Manager</a></li>
     <li><a href="https://gist.github.com/isaacs/579814">Installing Node JS without sudo</a></li>
   </ul>
 
-  <h3 class="ui header">2. Fork Semantic</h3>
+  <h3 class="ui header">2. 获取语义UI</h3>
 
   <iframe src="http://ghbtns.com/github-btn.html?user=semantic-org&repo=semantic-ui&type=fork&count=true&size=large"
   allowtransparency="true" frameborder="0" scrolling="0" width="90" height="30"></iframe>
-  <p>Fork the Semantic repo into a directory on your local machine and navigate into that directory</p>
+  <p>下载语义UI到本地，并cd到该目录。</p>
 
-  <p>Alternatively, you can <a href="https://github.com/Semantic-Org/Semantic-UI/archive/master.zip">download the entire repository as a zip</a> instead of using Git</p>
+  <p>你也可以从这里 <a href="https://github.com/Semantic-Org/Semantic-UI/archive/master.zip">download the entire repository as a zip</a> 直接下载。</p>
 
-  <h3 class="ui header">3. Install Dependencies</h3>
-  <p>NPM (Node Package Manager) keeps track of all the dependencies required for the project.</p>
+  <h3 class="ui header">3. 安装依赖包</h3>
 
-  <p>Updating npm inside the local directory will grab all development dependencies from <code>package.json</code> and store them in the root of the project.</p>
-
-  <div class="code" data-title="Installing dependencies" data-type="terminal">
+  <div class="code" data-title="安装依赖包" data-type="terminal">
     npm update; npm install;
   </div>
 
-  <h3 class="ui header">4a Creating Packages for Server</h3>
+  <h3 class="ui header">4a 编译语义UI</h3>
 
 
-  <p>Additionally your server needs to have the latest version of Semantic built before the documentation will appear formatted correctly. Running <code>grunt build</code> will create a version of the library at <code>docs/build</code> available for your server</p>
+  <p>你需要为本地文档编译语义UI，使用 <code>grunt build</code> 命令会自动编译到 <code>docs/build</code> 文件夹下</p>
 
-  <div class="code" data-title="Updating semantic for docs" data-type="terminal">
+  <div class="code" data-title="编译语义UI" data-type="terminal">
     grunt build
   </div>
-  <h3 class="ui header">4b Watching Files</h3>
+  <h3 class="ui header">4b 监视文件</h3>
 
-  <p>Docpad will automatically generate a static (html/css only) version of the documentation everytime you update a file inside <code>server/</code></p>
+  <p>Docpad 会实时更新静态页面，当<code>server/</code>里的内容发生改变时。</p>
 
-  <p>If you would like it to build semantic everytime you edit a file inside <code>src/</code> you will have to run the grunt watch script.</p>
+  <p>如果你希望你每次在<code>src/</code>改动时都重新编译，使用grunt watch</p>
 
-  <div class="code" data-title="Installing dependencies" data-type="terminal">
+  <div class="code" data-title="实时更新" data-type="terminal">
     grunt watch;
   </div>
 
-  <h3 class="ui header">4c. Start Your Server</h3>
+  <h3 class="ui header">4c. 启用本地调试</h3>
 
-  <p>Now that you've installed all the dependencies, starting your server should be a simple command</p>
+  <p>输入这个命令。</p>
 
-  <div class="code" data-title="Starting server locally" data-type="terminal">
+  <div class="code" data-title="启动本地服务器" data-type="terminal">
     docpad run
   </div>
 
-  <p>Docpad should now run the documentation on a local server accessible at <code>http://localhost:9778</code></p>
+  <p>Docpad 会默认为本地文档启用http服务，在<code>http://localhost:9778</code>查看</p>
 
-  <p>A static version of the documentation will be generated every time you make a change to a document. This will also be available in the <code>docs/</code> folder.
+  <p>文档的所有静态网页都在<code>docs/</code>文件夹下
 
   <h3 class="ui header">5. (Optional) Install Karma</h3>
 

@@ -205,14 +205,14 @@
       </div>
     </div>
     <div class="item">
-      <b>样式说明</b>
+      <b>开发经验</b>
       <div class="menu">
         
           <a class="item" href="/guide/cssguide.html">CSS</a>
         
           <a class="item" href="/guide/javascriptguide.html">Javascript</a>
         
-          <a class="item" href="/guide/styleguide.html">Language</a>
+          <a class="item" href="/guide/styleguide.html">命名规范</a>
         
       </div>
     </div>
@@ -311,16 +311,16 @@
 <div class="main container">
   <div class="peek">
     <div class="ui vertical pointing secondary menu">
-      <a class="active item">Overview</a>
-      <a class="item">Usage</a>
+      <a class="active item">概览</a>
+      <a class="item">用法</a>
     </div>
   </div>
 
-  <h2 class="ui dividing header">Overview</h2>
+  <h2 class="ui dividing header">概览</h2>
 
-  <p>A <b>variation</b> alters the design of an element but is not mutually exclusive. Variations can be stacked together, or be used along with altering an element's type.</p>
+  <p><b>可变属性</b>可以改变页面元素的样式。多个属性可以搭配使用。</p>
 
-  <p>For example, having wide menus that take up the full width of its parent may sometimes be overwhelming. You can use the compact variation of a menu to alter its format to only take up the necessary space.</p>
+  <p>例如，过宽的菜单会占据太多的页面空间，你可以使用 compact 属性来限制菜单的宽度。</p>
 
   <div class="code" data-type="html" data-label="true">
     <div class="ui compact tiered menu">
@@ -345,13 +345,13 @@
     </div>
   </div>
 
-  <h3 class="ui header">Context sensitive</h3>
+  <h3 class="ui header">独立</h3>
 
-  <p>In Semantic, variations maintain context based on the element they modify, but keep the same vocabulary between elements. Just like how in English, the adjective 'big' may describe a different scale for a big planet versus a big insect.</p>
+  <p>在语义UI中，可变属性可以用于描述不同的元素，并产生不同的效果。就像在自然语言中,“大”可以被用来描述一颗大的行星或一只大的昆虫。</p>
 
-  <p>For example an icon might need to modify it's vertical alignment when it is larger than the surrounding text, while a form does not.</p>
+  <p>例如下面这个例子。</p>
 
-  <p>All definitions in Semantic <b>are based around em and rem</b> so resizing an element usually is as simple as altering the base font size of the element, padding, margins, and other properties will adjust automatically.</p>
+  <p>语义UI对于大小的定义均使用了<b>em rem</b>。具有很良好的自适应性和响应式结构。</p>
 
   <div class="code" data-type="css" data-label="true">
     /* a large form is not quite as large as a large icon */
@@ -366,9 +366,9 @@
   </div>
 
 
-  <h2 class="ui dividing header">Using Variations Together</h2>
-  <p>Another variation of a menu is an <b>inverted menu</b>. This alters the color contrast to appear inverted for darker backgrounds. Some variations may also mutate when used together. Lets try adding the class name <code>red</code> as well.</p>
-  <p>Variations are not mutually exclusive and can be used together harmoniously, so we can use these together to create an <code>inverted red tiered menu</code></p>
+  <h2 class="ui dividing header">组合使用可变属性</h2>
+  <p>菜单的另一个属性是<b>inverted menu</b>。它改变了菜单的颜色，和其他颜色熟悉，例如<code>red</code>一同使用会产生不同的样式效果。</p>
+  <p>可变属性可以组合使用而且不会相互干扰，就像<code>inverted red tiered menu</code>这个例子一样。</p>
 
   <div class="code" data-type="html" data-label="true">
     <div class="ui red inverted tiered menu">
@@ -394,8 +394,8 @@
   </div>
   <div class="ui divider"></div>
 
-  <h3 class="ui header">Intersecting Variations</h3>
-  <p>The definition for the variation red contains css specifically for describing the intersection of both <code>red</code> and <code>inverted</code>. For example, lets see the same menu with only the red variation.</p>
+  <h3 class="ui header">属性交叉</h3>
+  <p>某些特定的组合，例如<code>red</code>和<code>inverted</code>在组合时具有独立的样式效果。让我们看看单独使用<code>red</code>时的情形。</p>
 
   <div class="code" data-type="html" data-label="true">
     <div class="ui red tiered menu">
@@ -423,7 +423,7 @@
 
   <div class="ui divider"></div>
   <a class="ui large right labeled teal icon button" href="/element.html">
-    Next: View Elements
+    查看: UI 元素
     <i class="right arrow icon"></i>
   </a>
 <!--
